@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Connect 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        #gameCanvas {
+            border: 2px solid #000;
+            background-color: #fff;
+            margin-top: 50px;
+        }
+        #gameInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        #winnerDisplay {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #matrixDisplay {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cell.red {
+            background-color: red;
+        }
+        .cell.yellow {
+            background-color: yellow;
+            color: black; 
+        }
+        .canvas-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            color: black;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <h1>WebGL Connect 4</h1>
+        <h2>Jackson Sulik & Robert Urton</h2>
+        <canvas id="gameCanvas" width="800" height="800"></canvas>
+    </div>
+    <div id="gameInfo">
+        <h2>Game Status</h2>
+        <div id="winnerDisplay">No Winner Yet</div>
+        <h3>Grid State</h3>
+        <div id="matrixDisplay"></div>
+        <button id="resetButton">Reset Game</button>
+    </div>
+
+    <script src="board.js"></script>
+    <script src="circle2.js"></script>
+    <script src="winCond.js"></script>
+</body>
+</html>
